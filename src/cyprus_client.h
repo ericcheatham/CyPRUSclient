@@ -34,6 +34,8 @@ int populateMetaExif(std::string file, std::string plate);
 
 void populateMetaBuffer(char * buffer, char * plate);
 
+char *  generateMD5hash(std::string file);
+
 size_t populateImage(char * buffer, char * image,int sockfd, size_t bufSize);
 
 int sendImageByteArray(char * image,  int sockfd);
