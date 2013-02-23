@@ -203,6 +203,12 @@ size_t populateImage(char * buffer, char * image,int sockfd, size_t bufSize)
 	return ((lSize)*sizeof(char)) +(sizeof(char)*bufSize);
 }
 
+char *  generateMD5hash(std::string file)
+{
+
+	return "hash";
+}
+
 /**Sends image specified byt (image) to the desination specified using (sockfd). 
 */
 int sendImageByteArray(char * image,  int sockfd)
