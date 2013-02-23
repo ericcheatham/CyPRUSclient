@@ -20,4 +20,4 @@ netexample : threaded_cy.o cyprus_client.o
 all: server netexample
 
 clean: 
-	rm *.o *~ server netexample
+	-/bin/rm -f *.o server netexample
