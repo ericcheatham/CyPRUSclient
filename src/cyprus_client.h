@@ -1,6 +1,7 @@
 #ifndef CYPRUS_CLIENT_H
 #define CYPRUS_CLIENT_H
 
+#define NOT_YET_IMPLEMENTED -2
 
 //========= Dependencies ============
 #include <stdio.h>
@@ -18,7 +19,7 @@
 #include <arpa/inet.h>
 
 //#include <gnutls/gnutls.h> 
-
+#include <openssl/md5.h>
 #include <exiv2/exiv2.hpp>
 
 //======== Functions =================
@@ -34,7 +35,7 @@ int populateMetaExif(std::string file, std::string plate);
 
 void populateMetaBuffer(char * buffer, char * plate);
 
-char *  generateMD5hash(std::string file);
+char   generateMD5hash(char * file);
 
 size_t populateImage(char * buffer, char * image,int sockfd, size_t bufSize);
 

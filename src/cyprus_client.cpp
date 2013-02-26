@@ -203,10 +203,17 @@ size_t populateImage(char * buffer, char * image,int sockfd, size_t bufSize)
 	return ((lSize)*sizeof(char)) +(sizeof(char)*bufSize);
 }
 
-char *  generateMD5hash(std::string file)
+char  generateMD5hash(char * file)
 {
+	/*
+	1) Create MD5 Struct
+	2) Init MD5 Calculator 
+	3) Init pthread
+	4) Stream file to MD5 Calculator
+	5) Popluate struct and return
+	*/
 
-	return "hash";
+	return NOT_YET_IMPLEMENTED;
 }
 
 /**Sends image specified byt (image) to the desination specified using (sockfd). 
