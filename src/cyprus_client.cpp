@@ -8,7 +8,7 @@
 	@return On succes, a file descriptor for a new socket is returned. 
 	On error, -1 is returned and errno is set appropriately.
 */
-int tcp_open(char * address)
+int tcp_open(char * address, int port)
 {
 	int sockfd, err;
 	struct sockaddr_in serveraddr;
@@ -19,14 +19,17 @@ int tcp_open(char * address)
 	bzero(&serveraddr, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;
 	serveraddr.sin_addr.s_addr = inet_addr(address);
-	serveraddr.sin_port = htons(32000);
+	serveraddr.sin_port = (port >  0) ? htons(port) :  htons(32000);
 	
 	//ssh_verify_cert_callback(gnutls_session_t session)
 	
 	err = connect(sockfd, (struct sockaddr *)&serveraddr, sizeof(serveraddr));
 	
 	if(err!=0)
+	{
+		perror("Socket creation failed: ");	
 		return err;
+	}
 	else
 		return sockfd;
 }

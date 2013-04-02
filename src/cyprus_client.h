@@ -23,7 +23,7 @@
 #include <exiv2/exiv2.hpp>
 
 //======== Functions =================
-int tcp_open(char * address);
+int tcp_open(char * address, int port);
 
 int tcp_close(int sd);
 

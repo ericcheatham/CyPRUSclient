@@ -1,4 +1,5 @@
 #include <pthread.h>
+#include <string.h>
 #include "cyprus_client.h"
 
 int main(int argc, char ** argv)
@@ -13,7 +14,7 @@ int main(int argc, char ** argv)
 		exit (-1);
 	}	
 	
-	sockfd = tcp_open(argv[1]);
+	sockfd = tcp_open(argv[1], atoi(argv[2]));
 	
 	//populateMetaRaw(argv[2], comment);
 	populateMetaExif(argv[2], "PLATE");
