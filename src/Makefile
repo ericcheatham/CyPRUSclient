@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS =  -Wall
-LFLAGS = -lm -lgnutls -lpthread -lexiv2
+LFLAGS = -lm  -lpthread -lexiv2
 
 server : helper_server.c
 	$(CC) helper_server.c -o server $(CFLAGS) 
