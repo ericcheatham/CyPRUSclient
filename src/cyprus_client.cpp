@@ -40,6 +40,7 @@ int tcp_open(char * address, int port)
 */
 int tcp_close(int sd)
 {
+	system("/usr/local/share/MotionDetection/send_image_processing_done");
 	return (shutdown(sd, SHUT_RDWR) ||close(sd));
 	
 }
